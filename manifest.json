@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "Crypto Market Cap Realtime",
+  "version": "1.1",
+  "description": "Hiển thị vốn hóa BTC, ETH, Altcoins, dominance & các sector DeFi, AI, Meme. Tự động làm mới.",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "permissions": [
+    "storage"
+  ]
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Crypto Market Cap Realtime</title>
+  <style>
+    body { font-family: Arial, sans-serif; min-width: 340px; text-align: center; margin: 20px; }
+    h2 { margin-bottom: 10px; }
+    .cap-table, .sector-table { width: 100%; margin: 10px 0; border-collapse: collapse; }
+    .cap-table td, .sector-table td { padding: 6px 8px; font-size: 1em; }
+    .label { font-weight: bold; text-align: left; }
+    .value { font-family: 'Segoe UI Mono', monospace; text-align: right; }
+    #updated { color: #888; font-size: 0.92em; margin-bottom: 12px; }
+    .row-alt { background: #f8f8f8; }
+    .refresh-row { margin: 16px 0; }
+    select, button { padding: 5px 10px; font-size: 1em; border-radius: 8px; border: 1px solid #ccc; }
+    button { background: #f7931a; color: #fff; border: none; margin-left: 10px; cursor: pointer; }
+    button:hover { background: #d97904; }
+    .sector-title { margin-top:18px; font-size:1.09em; color:#444; font-weight:bold; }
+    .dominance { font-size: 0.94em; color: #444; }
+  </style>
+</head>
+<body>
+  <h2>Crypto Market Cap Realtime</h2>
+  <div id="updated">Đang tải...</div>
+  <table class="cap-table">
+    <tr>
+      <td class="label">BTC Market Cap</td>
+      <td id="btc" class="value">...</td>
+    </tr>
+    <tr class="row-alt">
+      <td class="label dominance">BTC Dominance</td>
+      <td id="btc_dom" class="value dominance">...</td>
+    </tr>
+    <tr>
+      <td class="label">ETH Market Cap</td>
+      <td id="eth" class="value">...</td>
+    </tr>
+    <tr class="row-alt">
+      <td class="label dominance">ETH Dominance</td>
+      <td id="eth_dom" class="value dominance">...</td>
+    </tr>
+    <tr>
+      <td class="label">Total Market Cap</td>
+      <td id="total" class="value">...</td>
+    </tr>
+    <tr class="row-alt">
+      <td class="label">Altcoins Market Cap</td>
+      <td id="alt" class="value">...</td>
+    </tr>
+  </table>
+  <div class="refresh-row">
+    <label for="interval">Tự động làm mới:</label>
+    <select id="interval">
+      <option value="0">Tắt</option>
+      <option value="5">5 giây</option>
+      <option value="30">30 giây</option>
+      <option value="60">60 giây</option>
+    </select>
+    <button onclick="fetchMarketCaps(true)">Refresh</button>
+  </div>
+  <div class="sector-title">Vốn hóa các sector nổi bật</div>
+  <table class="sector-table">
+    <tr>
+      <td class="label">DeFi</td>
+      <td id="defi" class="value">...</td>
+    </tr>
+    <tr class="row-alt">
+      <td class="label">AI & Big Data</td>
+      <td id="ai" class="value">...</td>
+    </tr>
+    <tr>
+      <td class="label">Meme</td>
+      <td id="meme" class="value">...</td>
+    </tr>
+  </table>
+  <script src="popup.js"></script>
+</body>
+</html>
